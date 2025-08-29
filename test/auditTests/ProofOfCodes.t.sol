@@ -85,7 +85,7 @@ contract ProofOfCodes is ThunderLoanTest {
         new MaliciousFlashLoanReceiver(address(tswapPool), address(thunderLoan), address(thunderLoan.getAssetFromToken(tokenA)));
 
         vm.startPrank(user);
-        tokenA.mint(address(flr), 100e18); // mint our user 10 tokenA for the fees
+        tokenA.mint(address(flr), 100e18); // mint our user 100 tokenA for the fees
         thunderLoan.flashloan(address(flr), tokenA, amountToBorrow, "");
         vm.stopPrank();
 
